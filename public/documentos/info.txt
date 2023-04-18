@@ -1,0 +1,21 @@
+use crud-aecl;
+
+db.personas.insert({
+    "paterno":"Cid",
+    "materno":"Lima",
+    "nombre":"Angel eron",
+    "fecha":"17-10-2002"
+});
+
+db.createUser({
+    user:"mongoadmin",
+    pwd:"eron1710",
+    roles:[
+        {
+            role: "readWrite",
+            db: "crud-acl"
+        }
+    ]
+})
+
+    mongosh -u mongoadmin -p eron1710 --authenticationDatabase crud-acl
